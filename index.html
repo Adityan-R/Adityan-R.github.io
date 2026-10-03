@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adityan R · AI/ML Developer</title>
+<meta name="description" content="Adityan R specializes in LLM tooling, agentic AI and applied machine learning in Python. B.Tech CSE (AI/ML) at Lovely Professional University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{color-scheme:dark;--bg:#0c0c0d;--surface:#151517;--ink:#e7e7ea;--soft:#a4a4ab;--mute:#74747c;--rule:#2a2a2e;--blue:#3553ff;
+ --display:"VT323","Courier New",monospace;--serif:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+ --ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 .95rem/1.7 var(--serif)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.reveal{transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .reveal{opacity:0;transform:translateY(14px)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* masthead */
+.mast{padding:5rem 0 2rem;border-bottom:1px solid var(--rule);display:grid;gap:2rem}
+.meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--mute)}
+.meta .r{color:var(--blue)}
+h1{font:400 clamp(3.6rem,13vw,7rem)/.86 var(--display);letter-spacing:.02em;text-transform:uppercase;color:var(--blue);margin:0}
+.tag{max-width:36rem;font-size:1.05rem;margin:1.25rem 0 .25rem}
+.by{color:var(--soft);font-style:italic;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border:1px solid var(--ink);text-decoration:none;font:500 .82rem var(--mono);transition:background .15s,color .15s,transform .12s var(--ease)}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--bg)}
+.btn:active{transform:scale(.97)}
+.btn.p{border-color:var(--blue);color:var(--blue)}
+.btn.p:hover,.btn.p:focus-visible{background:var(--blue);color:var(--bg)}
+@media(min-width:62rem){.mast{grid-template-columns:minmax(0,1fr) 27rem;column-gap:3rem}.mast .meta{grid-column:1/-1}.fig{align-self:center}}
+
+/* figure plates */
+.plate{position:relative;aspect-ratio:560/380}
+.panel{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .25s var(--ease)}
+.panel.on{opacity:1;transition-delay:.25s}
+.panel svg{width:100%;height:100%}
+.frame{stroke:var(--rule)}.tick{stroke:var(--blue);stroke-width:1.4}
+.lab{font:11px var(--mono);letter-spacing:.14em;fill:var(--mute)}
+.lab.r{text-anchor:end;fill:var(--blue);letter-spacing:.06em}
+.ax{font:12px var(--mono);fill:var(--mute);text-anchor:middle}
+.edge{stroke:var(--blue);stroke-opacity:.28;stroke-dasharray:1;stroke-dashoffset:1}
+.on .edge{animation:draw .9s var(--ease) forwards}
+.on .l2{animation-delay:.35s}.on .l3{animation-delay:.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.node{fill:var(--bg);stroke:var(--ink);stroke-width:1.4;opacity:0}
+.on .node{animation:show .45s ease-out forwards}
+.on .n1{animation-delay:.15s}.on .n2{animation-delay:.5s}.on .n3{animation-delay:.85s}.on .n4{animation-delay:1.1s}
+@keyframes show{to{opacity:1}}
+.pulse{fill:var(--blue);opacity:0;offset-rotate:0deg}
+.on .pulse{animation:pulse 3.6s linear forwards}
+@keyframes pulse{0%{offset-distance:0%;opacity:0}10%,82%{opacity:1}96%,100%{offset-distance:100%;opacity:0}}
+.term{fill:var(--surface);stroke:var(--rule)}
+.line{font:14px var(--mono);fill:var(--ink);opacity:0}
+.line.c{fill:var(--blue)}.line.m{fill:var(--mute)}
+.on .line{animation:rise .4s ease-out forwards}
+@keyframes rise{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.caret{fill:var(--blue);opacity:0}
+.on .caret{animation:blink 1s steps(2,jump-none) 4 forwards}
+@keyframes blink{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+#rain{position:absolute;left:2.2%;top:14%;width:95.6%;height:82.5%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+.pop{position:absolute;left:0;top:0;width:min(18rem,94%);z-index:5;background:var(--surface);border:1px solid var(--blue);padding:.8rem .9rem .75rem;opacity:0;scale:.96;will-change:transform;pointer-events:none;transition:opacity .18s ease,scale .18s ease}
+.pop.open{opacity:1;scale:1}
+.pop::before,.pop::after{content:"";position:absolute;width:12px;height:12px;border:2px solid var(--blue)}
+.pop::before{left:-4px;top:-4px;border-right:0;border-bottom:0}
+.pop::after{right:-4px;bottom:-4px;border-left:0;border-top:0}
+.ph{display:flex;justify-content:space-between;gap:.5rem;font:.62rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:.6rem}
+.ph b{font-weight:500;color:var(--blue)}
+.pb{display:none}.pb.on{display:block}
+.pb svg{display:block;width:100%;height:auto}
+.row2{display:grid;grid-template-columns:1fr 6.5rem;gap:.75rem;align-items:center;margin-bottom:.6rem}
+.steps{list-style:none;margin:0;padding:0;font:.72rem/1.75 var(--mono)}
+.steps li{color:var(--mute)}
+.pt{font:.72rem/1.55 var(--mono);color:var(--soft);margin:.6rem 0 0}
+.pf{margin-top:.6rem;padding-top:.45rem;border-top:1px solid var(--rule);font:.58rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.dl{stroke:var(--mute);stroke-width:1}
+.dn{fill:var(--bg);stroke:var(--ink);stroke-width:1.2}
+.dt{font:9px var(--mono);fill:var(--mute);text-anchor:middle}
+.dt.b{fill:var(--blue)}
+.de{stroke:var(--blue);stroke-opacity:.4;stroke-dasharray:1;stroke-dashoffset:1}
+.dc{stroke:var(--blue);stroke-width:1.6;fill:none;stroke-dasharray:1;stroke-dashoffset:1}
+.dp{fill:var(--blue);opacity:0;offset-rotate:0deg}
+.pop.open .pb.on .de{animation:draw .8s var(--ease) forwards}
+.pop.open .pb.on .dc{animation:draw 1.6s var(--ease) forwards}
+.pop.open .pb.on .dp{animation:dpulse var(--t,2.4s) linear infinite}
+.pop.open .pb.on .steps li{animation:hl 4s linear infinite}
+@keyframes dpulse{0%{offset-distance:0%;opacity:0}12%,88%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes hl{0%,24%{color:var(--blue)}25%,100%{color:var(--mute)}}
+.plate{outline-offset:6px}
+.cap{font:.7rem/1.5 var(--mono);letter-spacing:.08em;color:var(--mute);text-align:center;min-height:3.2em;margin:.75rem 0 0;padding:0 1rem}
+.ctl{display:grid;grid-template-columns:minmax(80px,auto) 1fr minmax(80px,auto);align-items:center;gap:.5rem}
+.cb{min-height:40px;border:1px solid var(--rule);background:var(--bg);color:var(--soft);font:.62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .15s,border-color .15s}
+.cb:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+.cb:disabled{opacity:.38;cursor:default}
+.dots{display:flex;justify-content:center}
+.dot{position:relative;width:36px;height:36px;border:0;background:none;cursor:pointer}
+.dot::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;border:1px solid var(--blue);transform:translate(-50%,-50%);transition:background .15s}
+.dot.on::after{background:var(--blue)}
+
+/* marquee */
+.strip{border-bottom:1px solid var(--rule);padding:1.25rem 0 1.5rem;overflow:hidden}
+.strip .mono{text-align:center;color:var(--mute);margin-bottom:1rem}
+.marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;width:max-content;will-change:transform}
+.half{display:flex;gap:3rem;padding-right:3rem}
+.half span{font:.9rem var(--mono);letter-spacing:.06em;color:var(--mute);white-space:nowrap;transition:color .15s}
+.half span::before{content:"+ ";color:var(--blue)}
+.half span:hover{color:var(--blue)}
+
+/* about */
+.pre{padding:3rem 0;border-bottom:1px solid var(--rule);display:grid;gap:1rem}
+.pre .mono{color:var(--blue)}
+.body p{margin:0 0 1em;max-width:40rem}
+.body p:first-child::first-letter{font:400 4.2rem/.85 var(--display);float:left;padding:.06em .12em 0 0;color:var(--blue)}
+@media(min-width:48rem){.pre{grid-template-columns:12rem 1fr;gap:3rem}}
+
+/* projects */
+.toc{padding:3.5rem 0 1rem}
+.toc h2{font:400 .78rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:0 0 .5rem}
+.sub{color:var(--soft);margin:0 0 2rem}
+.list{border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:3rem 1fr auto;gap:.25rem 1rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:background .15s}
+.row:hover,.row:focus-visible{background:rgba(53,83,255,.12)}
+.num{font:.78rem var(--mono);letter-spacing:.1em;color:var(--blue)}
+.name{font:400 1.7rem/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.desc{grid-column:2;color:var(--soft);font-size:.88rem;margin:0;max-width:38rem}
+.stack{grid-column:2;font:.72rem var(--mono);letter-spacing:.06em;color:var(--mute)}
+.st{grid-column:3;grid-row:1;display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem;font:.72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.st span{display:flex;align-items:center;gap:.5rem}
+.sq{width:12px;height:12px;border:1px solid var(--blue);display:inline-block}
+.sq.done{background:var(--blue)}
+.sq.half{background:linear-gradient(135deg,var(--blue) 50%,transparent 50%)}
+.sq.fine{background:linear-gradient(var(--blue),var(--blue)) center/6px 6px no-repeat}
+.sq.plan{border:1px dashed var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:1.5rem;padding:1.5rem 0 3rem;font:.72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.legend span{display:flex;align-items:center;gap:.5rem}
+
+/* colophon */
+.colo{padding:3rem 0;border-top:1px solid var(--rule);display:grid;gap:1rem}
+.colo .mono{color:var(--blue)}
+.colo p{margin:0 0 1rem;max-width:38rem;color:var(--soft)}
+.links a{margin-right:1.5rem;font:500 .85rem var(--mono);color:var(--blue)}
+footer b{color:var(--blue);font-weight:500;padding:0 .25rem}
+footer{padding:1.5rem 0 3rem;color:var(--mute);font:.78rem var(--mono)}
+@media(min-width:48rem){.colo{grid-template-columns:12rem 1fr;gap:3rem}}
+@media(max-width:40rem){.row{grid-template-columns:2.5rem 1fr}.st{grid-column:2;grid-row:auto}.name{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .pop{transition:none;scale:1}
+ .pop .de,.pop .dc{animation:none!important;stroke-dashoffset:0}
+ .pop .dp{display:none}
+ .pop .steps li{animation:none!important}
+ .js .reveal{opacity:1;transform:none}
+ .panel{transition:none}
+ .edge,.node,.line{animation:none!important;stroke-dashoffset:0;opacity:1;transform:none}
+ .edge{stroke-opacity:.28}
+ .pulse,.caret{display:none}
+ .marq{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+ .track{animation:none}.track>[aria-hidden]{display:none}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+ <section class="mast">
+  <div class="meta mono"><span>FIG_000 · portfolio · 2026</span><span class="r">open to internships &amp; entry-level roles</span></div>
+  <div>
+   <h1>Adityan R</h1>
+   <p class="tag">AI/ML developer working on LLM agents and applied machine learning.</p>
+   <div class="cta">
+    <a class="btn p" href="#projects">See projects</a>
+    <a class="btn" href="https://github.com/Adityan-R">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/adityanr-baguette/">LinkedIn</a>
+    <a class="btn" href="mailto:adityanr566@gmail.com">Email</a>
+   </div>
+  </div>
+  <figure class="fig" style="margin:0" aria-label="Three illustrated figures">
+   <div class="plate" tabindex="0" aria-describedby="pop">
+    <div class="panel on" data-cap="Plate 1 of 3. Data in, gradients out, on repeat. Illustrative." role="group" aria-label="Plate 1: data stream">
+     <canvas id="rain" aria-hidden="true"></canvas>
+     <svg viewBox="0 0 560 380" fill="none">
+      <rect class="frame" x="8" y="8" width="544" height="364"/>
+      <path class="tick" d="M8 28V8h20M532 8h20v20M552 352v20h-20M28 372H8v-20"/>
+      <text class="lab" x="24" y="34">FIG_001 · DATA STREAM</text>
+      <text class="lab r" x="536" y="34">while True: learn()</text>
+     </svg>
+    </div>
+    <div class="panel" data-cap="Plate 2 of 3. Every model starts as this: layers, weights, a forward pass." role="group" aria-label="Plate 2: forward pass">
+     <svg id="net" viewBox="0 0 560 380" fill="none"></svg>
+    </div>
+    <div class="panel" data-cap="Plate 3 of 3. The loop behind every agent: plan, call a tool, observe, repeat. Illustrative." role="group" aria-label="Plate 3: agent loop">
+     <svg viewBox="0 0 560 380" fill="none">
+      <rect class="frame" x="8" y="8" width="544" height="364"/>
+      <path class="tick" d="M8 28V8h20M532 8h20v20M552 352v20h-20M28 372H8v-20"/>
+      <text class="lab" x="24" y="34">FIG_003 · AGENT LOOP</text>
+      <text class="lab r" x="536" y="34">illustrative</text>
+      <rect class="term" x="68" y="76" width="424" height="252"/>
+      <line class="frame" x1="68" y1="104" x2="492" y2="104"/>
+      <circle cx="84" cy="90" r="3.5" stroke="#74747c"/><circle cx="98" cy="90" r="3.5" stroke="#74747c"/><circle cx="112" cy="90" r="3.5" stroke="#74747c"/>
+      <text class="line c" x="92" y="140" style="animation-delay:.35s">task: fix the failing test</text>
+      <text class="line" x="92" y="180" style="animation-delay:1.1s">plan: read the test, find the bug</text>
+      <text class="line m" x="92" y="220" style="animation-delay:1.85s">tool: run tests → 1 failed</text>
+      <text class="line" x="92" y="260" style="animation-delay:2.6s">observe: off-by-one in loop bound</text>
+      <text class="line c" x="92" y="300" style="animation-delay:3.35s">answer: patched, tests pass</text>
+      <rect class="caret" x="92" y="310" width="9" height="12" style="animation-delay:4.1s"/>
+     </svg>
+    </div>
+    <div class="pop" id="pop" role="tooltip" aria-hidden="true">
+     <div class="pb">
+      <div class="ph"><b>Detail · Training loop</b><span>FIG_001</span></div>
+      <div class="row2">
+       <ol class="steps"><li style="animation-delay:0s">1 sample a batch</li><li style="animation-delay:1s">2 forward pass</li><li style="animation-delay:2s">3 measure loss</li><li style="animation-delay:3s">4 update weights</li></ol>
+       <svg viewBox="0 0 110 80" fill="none" aria-hidden="true">
+        <line class="dl" x1="8" y1="72" x2="104" y2="72"/><line class="dl" x1="8" y1="6" x2="8" y2="72"/>
+        <path class="dc" d="M8,14 C24,52 46,62 102,66" pathLength="1"/>
+        <circle class="dp" r="3" style="offset-path:path('M8,14 C24,52 46,62 102,66');--t:4s"/>
+        <text class="dt" x="56" y="79">steps</text>
+       </svg>
+      </div>
+      <p class="pt">Every step repeats: draw a batch, run the model, measure the error, nudge the weights. Loss falls as the loop runs.</p>
+     </div>
+     <div class="pb">
+      <div class="ph"><b>Detail · One neuron</b><span>FIG_002</span></div>
+      <svg viewBox="0 0 240 100" fill="none" aria-hidden="true">
+       <line class="de" x1="24" y1="20" x2="110" y2="50" pathLength="1"/><line class="de" x1="24" y1="50" x2="110" y2="50" pathLength="1"/><line class="de" x1="24" y1="80" x2="110" y2="50" pathLength="1"/>
+       <line class="de" x1="121" y1="50" x2="150" y2="50" pathLength="1" style="animation-delay:.5s"/><line class="de" x1="176" y1="50" x2="216" y2="50" pathLength="1" style="animation-delay:.7s"/>
+       <circle class="dn" cx="24" cy="20" r="4"/><circle class="dn" cx="24" cy="50" r="4"/><circle class="dn" cx="24" cy="80" r="4"/>
+       <text class="dt" x="12" y="23">x₁</text><text class="dt" x="12" y="53">x₂</text><text class="dt" x="12" y="83">x₃</text>
+       <text class="dt" x="64" y="29">w₁</text><text class="dt" x="64" y="45">w₂</text><text class="dt" x="64" y="73">w₃</text>
+       <circle class="dn" cx="110" cy="50" r="11"/><text class="dt" x="110" y="54">Σ</text>
+       <rect class="dn" x="150" y="38" width="26" height="24" style="stroke:var(--blue)"/><text class="dt b" x="163" y="54">σ</text>
+       <circle cx="222" cy="50" r="5" fill="#3553ff"/><text class="dt" x="222" y="70">ŷ</text>
+       <circle class="dp" r="3" style="offset-path:path('M24,20 L110,50');animation-delay:0s"/>
+       <circle class="dp" r="3" style="offset-path:path('M24,50 L110,50');animation-delay:.35s"/>
+       <circle class="dp" r="3" style="offset-path:path('M24,80 L110,50');animation-delay:.7s"/>
+       <circle class="dp" r="3" style="offset-path:path('M110,50 L222,50');animation-delay:1.2s"/>
+      </svg>
+      <p class="pt">Each input is scaled by a weight, summed with a bias, then squashed by σ. Stack many of these and you have a network.</p>
+     </div>
+     <div class="pb">
+      <div class="ph"><b>Detail · The loop</b><span>FIG_003</span></div>
+      <svg viewBox="0 0 240 100" fill="none" aria-hidden="true">
+       <circle cx="120" cy="52" r="32" stroke="#3553ff" stroke-opacity=".35" stroke-dasharray="3 4"/>
+       <rect class="dn" x="116" y="16" width="8" height="8"/><rect class="dn" x="148" y="48" width="8" height="8"/>
+       <rect class="dn" x="116" y="80" width="8" height="8"/><rect class="dn" x="84" y="48" width="8" height="8"/>
+       <text class="dt" x="120" y="11">plan</text><text class="dt" x="172" y="55" style="text-anchor:start">act</text>
+       <text class="dt" x="120" y="98">observe</text><text class="dt" x="78" y="55" style="text-anchor:end">check</text>
+       <circle class="dp" r="3.5" style="offset-path:path('M120,20 a32,32 0 1,1 -0.01,0');--t:4s"/>
+      </svg>
+      <p class="pt">The model plans, calls a tool, reads what came back, and repeats until the goal is met.</p>
+     </div>
+     <div class="pf">illustrative · simplified</div>
+    </div>
+   </div>
+   <figcaption class="cap" id="cap">Plate 2 of 3. Every model starts as this: layers, weights, a forward pass.</figcaption>
+   <div class="ctl">
+    <button class="cb" id="prev" type="button" aria-label="Previous figure">Previous</button>
+    <div class="dots" role="group" aria-label="Choose a figure">
+     <button class="dot on" type="button" aria-label="Plate 1" aria-pressed="true"></button>
+     <button class="dot" type="button" aria-label="Plate 2" aria-pressed="false"></button>
+     <button class="dot" type="button" aria-label="Plate 3" aria-pressed="false"></button>
+    </div>
+    <button class="cb" id="next" type="button" aria-label="Next figure">Next</button>
+   </div>
+  </figure>
+ </section>
+</header>
+
+<div class="strip" aria-label="Tools and languages">
+ <div class="mono">Tools and languages</div>
+ <div class="marq"><div class="track" id="track"><div class="half" id="half">
+  <span>Python</span><span>scikit-learn</span><span>LangChain</span><span>Ollama</span><span>LiteLLM</span><span>TypeScript</span><span>React</span><span>Textual</span><span>Git</span><span>Docker</span><span>SQLite</span><span>HTML/CSS</span>
+ </div></div></div>
+</div>
+
+<main class="wrap">
+ <section class="pre">
+  <div class="mono reveal">About</div>
+  <div class="body reveal">
+   <p>Specializes in LLM tooling, agentic AI and applied machine learning, with Python as the main stack. Work so far spans a command-line agent that moves between local and remote models, a fraud detection system with a hardware interface, and a terminal app for managing downloads.</p>
+   <p>Also builds full-stack apps in TypeScript and React. Currently a B.Tech CSE (AI/ML) student at Lovely Professional University.</p>
+  </div>
+ </section>
+
+ <section class="toc" id="projects">
+  <h2 class="reveal">Projects · 3 entries</h2>
+  <p class="sub reveal">Each one is open source on GitHub.</p>
+  <div class="list">
+   <a class="row reveal" href="https://github.com/Adityan-R/Baguette">
+    <span class="num">01</span><span class="name">Baguette</span><span class="st"><span><i class="sq half"></i>In active development</span></span>
+    <p class="desc">A command-line LLM agent that switches between local and remote models without changing your workflow. Inspired by Claude Code and Gemini CLI.</p>
+    <span class="stack">Python · Ollama · LiteLLM</span>
+   </a>
+   <a class="row reveal" href="https://github.com/Adityan-R/atm-fraud-detection">
+    <span class="num">02</span><span class="name">ATM Fraud Detection</span><span class="st"><span><i class="sq done"></i>Stable</span><span><i class="sq fine"></i>Maintained</span></span>
+    <p class="desc">A fraud simulator with a Random Forest backend and an Arduino hardware interface. A weighted loss keeps missed fraud cases to a minimum.</p>
+    <span class="stack">Python · scikit-learn · Arduino · SQLite</span>
+   </a>
+   <a class="row reveal" href="https://github.com/Adityan-R/WindSkye">
+    <span class="num">03</span><span class="name">WindSkye</span><span class="st"><span><i class="sq done"></i>Stable</span><span><i class="sq fine"></i>Maintained</span></span>
+    <p class="desc">A terminal app for searching and managing downloads through qBittorrent, with a clean text interface.</p>
+    <span class="stack">TypeScript · Textual · qbittorrent-api</span>
+   </a>
+  </div>
+  <div class="legend">
+   <span><i class="sq done"></i>Stable</span><span><i class="sq fine"></i>Maintained</span><span><i class="sq half"></i>In active development</span><span><i class="sq plan"></i>Planned</span>
+  </div>
+ </section>
+
+ <section class="colo">
+  <div class="mono reveal">Colophon</div>
+  <div class="reveal">
+   <p>One static page, no frameworks, hosted on GitHub Pages. Figures are inline SVG drawn with CSS animation.</p>
+   <div class="links"><a href="https://github.com/Adityan-R">GitHub</a><a href="https://www.linkedin.com/in/adityanr-baguette/">LinkedIn</a><a href="mailto:adityanr566@gmail.com">Email</a></div>
+  </div>
+ </section>
+</main>
+<footer class="wrap">© 2026 Adityan R <b>·</b> no bugs, only undocumented features</footer>
+
+<script>
+(function(){
+ // build the forward-pass figure
+ var svg=document.getElementById('net'),NS='http://www.w3.org/2000/svg';
+ var xs=[90,230,370,480],ys=[[110,175,240,305],[100,170,240,310],[100,170,240,310],[170,240]],h='';
+ h+='<rect class="frame" x="8" y="8" width="544" height="364"/><path class="tick" d="M8 28V8h20M532 8h20v20M552 352v20h-20M28 372H8v-20"/>';
+ h+='<text class="lab" x="24" y="34">FIG_002 · FORWARD PASS</text><text class="lab r" x="536" y="34">y = σ(Wx + b)</text>';
+ for(var l=0;l<3;l++)ys[l].forEach(function(a){ys[l+1].forEach(function(b){
+  h+='<line class="edge l'+(l+1)+'" x1="'+xs[l]+'" y1="'+a+'" x2="'+xs[l+1]+'" y2="'+b+'" pathLength="1"/>';});});
+ ys.forEach(function(c,i){c.forEach(function(y){h+='<circle class="node n'+(i+1)+'" cx="'+xs[i]+'" cy="'+y+'" r="7"/>';});});
+ h+='<circle class="pulse" r="4" style="offset-path:path(\'M90,110 L230,100 L370,170 L480,170\');animation-delay:.9s"/>';
+ h+='<circle class="pulse" r="4" style="offset-path:path(\'M90,175 L230,310 L370,170 L480,240\');animation-delay:2.2s"/>';
+ ['x','h₁','h₂','ŷ'].forEach(function(t,i){h+='<text class="ax" x="'+xs[i]+'" y="345">'+t+'</text>';});
+ svg.innerHTML=h;
+
+ // matrix rain (plate 3): blue glyphs with the odd light spark, drawn only while visible
+ var cv=document.getElementById('rain'),cx=cv.getContext('2d'),timer=null,drops=[],fs=14,cols=0,H=0,
+  G='01∑σ∇θλ∂{}<>/=+$#%&*'.split(''),
+  cs=getComputedStyle(document.documentElement),blue=cs.getPropertyValue('--blue').trim()||'#3553ff',ink=cs.getPropertyValue('--ink').trim()||'#e7e7ea',
+  still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function size(){var r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=Math.max(1,r.width*d);cv.height=Math.max(1,r.height*d);
+  cx.setTransform(d,0,0,d,0,0);cx.font=fs+'px "JetBrains Mono",monospace';cols=Math.floor(r.width/fs);H=r.height;drops=[];
+  for(var i=0;i<cols;i++)drops.push(-Math.floor(Math.random()*30));}
+ function step(){
+  cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.09)';cx.fillRect(0,0,cv.width,cv.height);
+  cx.globalCompositeOperation='source-over';
+  for(var i=0;i<cols;i++){var y=drops[i];
+   if(y>=0){cx.fillStyle=Math.random()<.12?ink:blue;cx.fillText(G[Math.floor(Math.random()*G.length)],i*fs,y*fs);}
+   if(y*fs>H&&Math.random()>.97)drops[i]=0;else drops[i]=y+1;}}
+ function rain(on){
+  clearInterval(timer);timer=null;
+  if(!on){cx.clearRect(0,0,cv.width,cv.height);return;}
+  size();
+  if(still){for(var k=0;k<70;k++)step();return;}
+  timer=setInterval(step,55);}
+ document.addEventListener('visibilitychange',function(){if(document.hidden){clearInterval(timer);timer=null;stop();}else{if(cur===0&&!still)rain(true);play();}});
+
+ // plate carousel: wraps around and advances on an equal 6s interval
+ var panels=[].slice.call(document.querySelectorAll('.panel')),dots=[].slice.call(document.querySelectorAll('.dot')),
+  prev=document.getElementById('prev'),next=document.getElementById('next'),cap=document.getElementById('cap'),cur=0,auto=null,pbs=[].slice.call(document.querySelectorAll('.pb')),hold=false;
+ function show(i){
+  cur=(i+panels.length)%panels.length;
+  panels.forEach(function(p,k){p.classList.toggle('on',k===cur);p.setAttribute('aria-hidden',k!==cur);});
+  dots.forEach(function(d,k){d.classList.toggle('on',k===cur);d.setAttribute('aria-pressed',k===cur);});
+  cap.textContent=panels[cur].dataset.cap;rain(cur===0);pbs.forEach(function(b,k){b.classList.toggle('on',k===cur)});
+ }
+ function stop(){clearInterval(auto);auto=null;}
+ function play(){stop();if(still||hold)return;auto=setInterval(function(){show(cur+1)},6000);}
+ prev.onclick=function(){show(cur-1);play()};next.onclick=function(){show(cur+1);play()};
+ dots.forEach(function(d,k){d.onclick=function(){show(k);play()}});
+ show(0);play();
+
+ // hover / focus / tap opens the detail window, pauses the carousel, and the window eases after the cursor
+ var plate=document.querySelector('.plate'),pop=document.getElementById('pop'),tx=0,ty=0,px=0,py=0,live=false,raf=0,endT=null;
+ function target(e){
+  var r=plate.getBoundingClientRect(),w=pop.offsetWidth,h=pop.offsetHeight;
+  if(!e){tx=r.width-w+12;ty=r.height-h+24;return;}
+  var x=e.clientX-r.left,y=e.clientY-r.top;
+  tx=x+18;ty=y+18;
+  if(e.clientX+18+w>window.innerWidth-8)tx=x-w-18;
+  if(e.clientY+18+h>window.innerHeight-8)ty=y-h-18;
+  if(r.left+tx<8)tx=8-r.left;
+  if(r.top+ty<8)ty=8-r.top;
+ }
+ function frame(){
+  var k=still?1:.2;px+=(tx-px)*k;py+=(ty-py)*k;
+  pop.style.transform='translate('+px.toFixed(1)+'px,'+py.toFixed(1)+'px)';
+  raf=live?requestAnimationFrame(frame):0;
+ }
+ function pops(on,e){
+  clearTimeout(endT);
+  if(on){
+   target(e);px=tx;py=ty;
+   pop.style.transform='translate('+px.toFixed(1)+'px,'+py.toFixed(1)+'px)';
+   pop.classList.add('open');live=true;if(!raf)raf=requestAnimationFrame(frame);
+  }else{
+   pop.classList.remove('open');
+   endT=setTimeout(function(){live=false;},260);
+  }
+  pop.setAttribute('aria-hidden',!on);
+  hold=on;if(on)stop();else play();
+ }
+ plate.addEventListener('mouseenter',function(e){pops(true,e)});
+ plate.addEventListener('mousemove',function(e){if(pop.classList.contains('open'))target(e)});
+ plate.addEventListener('mouseleave',function(){pops(false)});
+ plate.addEventListener('focus',function(){pops(true)});
+ plate.addEventListener('blur',function(){pops(false)});
+ plate.addEventListener('click',function(e){if(window.matchMedia('(hover: none)').matches)pops(!pop.classList.contains('open'),e);});
+
+ // marquee: clone the set so the loop is seamless
+ var half=document.getElementById('half'),track=document.getElementById('track');
+ var c=half.cloneNode(true);c.removeAttribute('id');c.setAttribute('aria-hidden','true');track.appendChild(c);
+ // ease the strip to a near-instant stop on hover, and back up to speed when the cursor leaves
+ if(!still){
+  var marq=track.parentNode,pos=0,v=36,goal=36,last=0;
+  marq.addEventListener('mouseenter',function(){goal=0});
+  marq.addEventListener('mouseleave',function(){goal=36});
+  (function tick(t){
+   var dt=last?Math.min(.05,(t-last)/1000):0;last=t;
+   v+=(goal-v)*(1-Math.exp(-dt*9));
+   pos-=v*dt;var w=half.offsetWidth;if(w&&pos<=-w)pos+=w;
+   track.style.transform='translateX('+pos.toFixed(2)+'px)';
+   requestAnimationFrame(tick);
+  })(0);
+ }
+
+ // scroll reveal
+ var els=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(e,i){e.style.transitionDelay=(i%3)*60+'ms';io.observe(e);});
+ }else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+</body>
+</html>
